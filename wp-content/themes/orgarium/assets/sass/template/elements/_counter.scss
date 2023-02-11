@@ -1,0 +1,63 @@
+.gsc-counter-group{
+	&.style-1{
+		.milestone-block{
+			background: $bg-gray;
+			padding: 40px 30px;
+			border-radius: 8px;
+			width: 100%;
+			transition: all 0.35s;
+			@media(max-width: 1024px){
+				padding: 30px 15px;
+			}
+			.counter-content{
+				position: relative;
+				z-index: 11;
+				.milestone-icon{
+					width: 64px;
+					height: 64px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background: $theme-color;
+					color: $black;
+					border-radius: 50%;
+					font-size: 34px;
+					margin-bottom: 26px;
+				}
+				.milestone-number-inner{
+					font-size: 35px;
+					font-weight: 700;
+					color: $black;
+					letter-spacing: -1px;
+					@media(max-width: 1024px){
+						font-size: 30px;
+					}
+				}
+				.title{
+					font-size: 16px;
+					font-weight: 600;
+					margin: 15px 0 0;
+				}
+			}
+			.overlay-icon{
+				font-size: 120px;
+				color: rgba(255, 255, 255, 0.06);
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				z-index: 1;
+			}
+			&:hover, &.active{
+				background: $theme-color-2;
+				.counter-content{
+					.milestone-number-inner{
+						color: $white;
+					}
+					.title{
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

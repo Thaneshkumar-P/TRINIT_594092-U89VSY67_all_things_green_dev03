@@ -1,0 +1,354 @@
+.gsc-image-content{
+  	&.skin-v1{
+		 padding-right: 32px;
+  		.box-content{
+		 	position: relative;
+		 	margin: 0 auto;
+		 	.image-wrapper{
+		 		position: absolute;
+		    	left: 0;
+		    	top: 0;
+		    	width: 100%;
+		    	height: 100%;
+		    	overflow: hidden;
+		    	&:after{
+		    		content: '';
+		    		background: rgba(0, 0, 0, 0.36);
+		    		position: absolute;
+		    		top: 0;
+		    		left: 0;
+		    		width: 100%;
+		    		height: 100%;
+		    	}
+		    	.image{
+		    		position: absolute;
+			    	left: 0;
+			    	top: 0;
+			    	width: 100%;
+			    	height: 100%;
+			    	transition: all 10s;
+					img{
+				  		position: absolute;
+					   height: 100%;
+					   width: 100%;
+					   object-fit: cover;
+					   transform: translate(-50%, -50%);
+					   top: 50%;
+					   left: 50%;
+					}
+				}
+			}
+		 	.desc{
+		 		position: absolute;
+		 		bottom: 0;
+		 		left: 0;
+		 		padding: 20px 30px 50px 50px;
+		 		font-size: 30px;
+		 		color: $white;
+		 		font-size: 60px;
+		 		font-family: $font-second;
+		 		line-height: 1;
+		 		max-width: 560px;
+		 		@media(max-width: 1024px){
+		 			font-size: 45px;
+		 			padding: 20px 30px 30px 30px;
+		 		}
+		 		@media(max-width: 768px){
+		 			font-size: 30px;
+		 			padding: 20px;
+		 		}
+		 	}
+		 	.title{
+		 		margin: 0;
+		 		padding: 30px 0;
+		 		background: $theme-color;
+		 		color: $black;
+		 		font-size: 20px;
+		 		width: 64px;
+		 		line-height: 64px;
+		 		white-space: nowrap;
+		 		position: absolute;
+		 		top: -50px;
+		 		right: -32px;
+		 		writing-mode: vertical-lr;
+		 		transform: rotate(180deg);
+		 		text-align: center;
+		 		z-index: 11;
+		 	}
+		 	.link-overlay{
+		 		position: absolute;
+		 		@include size(100%, 100%);
+		 		top: 0;
+		 		left: 0;
+		 		z-index: 11;
+		 	}
+			&:hover{
+				.image{
+					@include scale(1.05);
+				}
+			}
+		}
+  	}
+
+	&.skin-v2{
+	 	text-align: center;
+	 	position: relative;
+	 	max-width: 580px;
+	 	margin: 0 auto 30px;
+	 	padding-left: 80px;
+	 	padding-top: 80px;
+	 	.image{
+			position: relative;
+			overflow: hidden;
+			z-index: 11;
+			@include media-breakpoint-down(sm){
+		  		padding: 0;
+		  		width: 100%;
+			}
+			img{
+		  		transition: all 5s;
+			}
+			&:hover{
+			  	img{
+				 	@include scale(1.1);
+			  	}
+			}
+		}
+	 	.image-second{
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 11;
+			max-width: 195px;
+			border: 10px solid $white;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+			.image-second-inner{
+			  	overflow: hidden;
+			  	img{
+				 	transition: all 5s;
+			  	}
+			}
+		 	&:hover{
+			  	img{
+				 	@include scale(1.1);
+			  	}
+			}
+	 	}
+	 	.title{
+	 		position: absolute;
+	 		z-index: 11;
+	 		color: $theme-color;
+	 		right: 20px;
+	 		bottom: 0;
+			.text{
+		  		font-family: $font-second;
+	 			font-size: 45px;
+	 			line-height: 115px;
+	 			@include media-breakpoint-down(md){
+	 				font-size: 38px;
+	 				line-height: 95px;
+	 			}
+	 			@include media-breakpoint-down(sm){
+	 				font-size: 32px;
+	 			}
+			}
+	 	}
+  	}
+
+  	&.skin-v3{
+	 	position: relative;
+	 	text-align: left;
+	 	max-width: 600px;
+	 	margin: 0 auto 20px;
+	 	.image{
+			position: relative;
+			overflow: hidden;
+			text-align: center;
+			border-radius: 50%;
+			img{
+		  		border-radius: 50%;
+			}
+	 	}
+	 	.shape-1{
+	 		position: absolute;
+    		top: 120px;
+    		left: -41px;
+    		height: 95px;
+    		width: 95px;
+    		background-color: $theme-color-2;
+    		border-radius: 50%;
+    		animation-name: shapeMover;
+    		animation-duration: 10s;
+    		animation-timing-function: linear;
+    		animation-delay: 2s;
+    		animation-iteration-count: infinite;
+    		perspective: 100px;
+    		transform-origin: center center;
+	 	}
+	 	.shape-2{
+	 		position: absolute;
+	    	bottom: -60px;
+	    	right: 57px;
+	    	height: 180px;
+	    	width: 180px;
+	    	background-color: $theme-color;
+	    	border-radius: 50%;
+	    	z-index: -1;
+	    	animation-name: shapeMover;
+	    	animation-duration: 10s;
+	    	animation-timing-function: linear;
+	    	animation-delay: 2s;
+	    	animation-iteration-count: infinite;
+	    	perspective: 100px;
+	    	transform-origin: center center;
+	 	}
+  	}
+
+  	&.skin-v4{
+	 	position: relative;
+	 	text-align: left;
+	 	max-width: 500px;
+	 	margin: 0 auto 30px;
+	 	.box-content{
+			background: $white;
+			padding: 30px 20px 30px;
+			@include transition(all 0.35s); 
+			max-width: 480px;
+			margin: 0 auto;
+			border-radius: 38px;
+			text-align: center;
+			position: relative;
+			@media(max-width: 1024px){
+		  		padding: 20px 15px;
+		  	}
+			.content-inner{
+				.image{
+					position: relative;
+					overflow: hidden;
+					text-align: center;
+					width: 75px;
+					height: 75px;
+					border-radius: 50%;
+					margin: 20px auto 15px;
+					display: inline-block;;
+					img{
+				  		@include transition(all 3s);
+					}
+			 	}  
+				.title{
+				  	font-size: 30px;
+				  	color: $black;
+				  	line-height: 36px;
+				  	font-family: $font-second;
+				  	font-weight: 400;
+				  	@media(max-width: 1024px){
+				  		font-size: 22px;
+				  		line-height: 30px;
+				  	}
+				}
+				.desc{
+			  		color: $black;
+				}
+			}
+	 	}
+  	}
+
+  	
+  	&.skin-v6{
+	 	position: relative;
+	 	text-align: left;
+	 	max-width: 500px;
+	 	margin: 0 auto 30px;
+	 	border-radius: 8px;
+	 	overflow: hidden;
+	 	.box-content{
+	 		position: relative;
+	 		.content-inner{
+	 			position: relative;
+	 			z-index: 11;
+	 			padding: 55px 35px 60px;
+	 			text-align: center;
+	 			@include media-breakpoint-down(lg){
+	 				padding: 45px 20px 50px;
+	 			}
+	 			.title{
+	 				margin: 0 0 30px; 
+	 				font-size: 28px;
+	 				a{
+	 					color: $white;
+	 				}
+	 			}
+	 			.desc{
+	 				color: #9d9d9d;
+	 				.medium{
+	 					color: $white;
+	 					display: block;
+	 					margin-top: 20px;
+	 					font-size: 22px;
+	 					font-weight: 700;
+	 				}
+	 			}
+	 			.read-more{
+	 				padding-top: 15px;
+	 			}
+	 		}
+	 		.bg-image{
+	 			position: absolute;
+	 			top: 0;
+	 			left: 0;
+	 			@include size(100%, 100%);
+	 			z-index: 1;
+	 			background-size: cover;
+	 			background-position: center center;
+	 			&:after{
+	 				content: '';
+	 				width: 100%;
+	 				height: 100%;
+	 				background: rgba(0, 0, 0, 0.85);
+	 				position: absolute;
+	 				top: 0;
+	 				left: 0;
+	 				z-index: 2;
+	 			}
+	 		}
+	 	}
+  	}
+
+  	&.skin-v7{
+	   position: relative;
+	   margin-bottom: 30px;
+	   text-align: left;
+	   padding: 30px 45px;
+	   border: 1px solid $border-color;
+	   @include media-breakpoint-down(lg){
+	      padding: 30px 20px;
+	   }
+	   .image{
+	      position: relative;
+	      overflow: hidden;
+	      text-align: center;
+	      img{
+	        	@include transition(all 3s);
+	      }
+	   }  
+	   .box-content{
+	      background: $white;
+	      z-index: 1;
+	      @include transition(all 0.35s); 
+	      text-align: center;
+	      .title{
+	        	margin: 20px 0 0;
+	        	font-size: 20px;
+	        	color: $black;
+	        	line-height: 32px;
+	      }
+	      .desc{
+	        	margin-top: 25px;
+	        	color: $body-color;
+	      }
+	      .read-more{
+	        	margin-top: 28px;
+	      }
+	   }
+	}
+}

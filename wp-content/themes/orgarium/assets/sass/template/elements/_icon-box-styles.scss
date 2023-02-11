@@ -1,0 +1,127 @@
+.gsc-icon-box-styles{
+	&.style-1{
+		position: relative;
+		@include clearfix();
+		text-align: left;
+		margin-bottom: 30px;
+		.icon-box-content{
+			display: flex;
+			.box-icon{
+				display: inline-block;
+				transition: all 0.35s;
+				border-radius: 50%;
+				background: $theme-color;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 25px;
+				i, svg{
+					color: $headings-color;
+					fill: $headings-color;
+					transition: all 0.35s;
+					height: auto;
+			  }
+			}
+		}
+		.box-content{
+			.title{
+				color: $black;
+				font-size: 20px;
+				line-height: 30px;
+				margin: 0 0 10px;
+				display: block;
+				transition: all 0.35s;
+				@include media-breakpoint-down(lg){
+					font-size: 18px;
+				}
+			}
+			.desc{
+				font-weight: 500;
+				line-height: 28px;
+			}
+		}
+		.link-overlay{
+			@include size(100%, 100%);
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+	}
+	
+	&.style-2, &.style-3{
+		.icon-box-content{
+			display: flex;
+			.icon-inner{
+				.box-icon{
+					width: 90px;
+					height: 90px;
+					background: $bg-gray;
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin: 0 30px 0 0;
+					@media(max-width: 1024px){
+						margin: 0 20px 0 0;
+					}
+					i{
+						font-size: 46px;
+						color: $theme-color;
+					}
+					svg{
+						width: 46px;
+						fill: $theme-color;
+					}
+					img{
+						max-width: 46px;
+					}
+				}
+			}
+			.box-content{
+				.title{
+					font-size: 20px;
+					margin: 0 0 8px;
+					font-weight: 800;
+				}
+			}
+		}
+	}
+
+	&.style-3{
+		.icon-box-content{
+			.icon-inner{
+				order: 6;
+				@media(max-width: 768px){
+					order: 1;
+				}
+				.box-icon{
+				 	margin: 0 0 0 30px!important; 
+				 	@media(max-width: 1024px){
+				 		margin: 0 0 0 20px!important;
+				 	}
+				 	@media(max-width: 768px){
+						margin: 0 20px 0 0!important;
+				 	}
+				}
+			}
+			.box-content{
+				order: 2;
+				text-align: right;
+				@media(max-width: 768px){
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	&:hover, &.active{
+		.icon-inner{
+			.box-icon{
+				svg, i{
+					animation: beat 1.5s ease 0s infinite;
+				}
+			}
+		}
+	}
+}

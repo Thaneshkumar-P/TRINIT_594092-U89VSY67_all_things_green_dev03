@@ -1,0 +1,61 @@
+.gva-navigation-menu{
+   .gva-nav-menu{
+      @include clearfix();
+   }
+   &.style-2{
+      .gva-main-menu{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         > li{
+            text-align: center;
+            border-right: 1px solid $border-color;
+            width: 100%;
+            padding: 20px 0;
+            transition: all 0.35s;
+            position: relative;
+            > a{
+               &:before{
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                  z-index: 11;
+               }
+            }
+            &:last-child{
+               border-right: 0;
+            }
+            &.current-menu-item, &.current_page_parent, &.current-menu-ancestor{
+               background-color: $theme-color;
+               background-image: url('#{$image-theme-path-base}menu-line.png');
+               background-repeat: repeat;
+               background-position: top left;
+               border-right-color: transparent;
+            }
+         }
+      }
+   }
+   &.menu-align-center{
+      text-align: center;
+      .gva-nav-menu{
+         display: inline-block;
+         float: none;
+         margin-bottom: -10px;
+      }
+   }
+   &.menu-align-right{
+      .gva-nav-menu{
+         float: right;
+      }
+   }
+}
+.gv-sticky-wrapper.is-fixed{
+   .elementor-widget-gva-navigation-menu.elementor-absolute{
+      margin: 0;
+      top: 0;
+      position: relative;
+   }
+}
